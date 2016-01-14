@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- oracle configuration Created: 14.08.2013 : Mohamed ACHBANI -->
+<oracle version="0.4">	
+	<!--- configuration of the db's to check -->
+	<!-- DB Parameter -->
+	<!-- dest of alert logfile of the database -->	
+	<!-- max last lines to read in alert logfile of the database -->	
+	<!-- TNS NAME of the database -->	
+	<db>
+		<dest>alert_DB1.log</dest>		
+		<max_lines_read>500</max_lines_read>	
+		<TNS>DB1</TNS>		
+	</db>			
+	<!-- add the same DB section for the next database -->		
+</oracle>
