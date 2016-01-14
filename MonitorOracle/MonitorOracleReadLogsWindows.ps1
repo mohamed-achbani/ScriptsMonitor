@@ -13,9 +13,8 @@
 #clear screan
 cls
 
-
 # List servers name
-$serverORA = @(Get-Content ".\serversORA.txt")
+$servers = @(Import-Csv ".\servers.csv")
 
 $style = "<" + "style>"  
 $style = $style + "TABLE{border:1px solid black; border-collapse: collapse;}" 
@@ -30,7 +29,7 @@ $Search = "ORA"
 
 # Analyse for every servers
 Write-host "In progress ..."
-foreach ($entry in $serverORA)
+foreach ($entry in $servers)
 {	
 	$ComputerName = $entry.Name
 	if ($ComputerName -ne $null) {

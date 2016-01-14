@@ -14,7 +14,7 @@
 cls
 
 # List servers name
-$serverSQL = @(Get-Content ".\servers.txt")
+$servers = @(Import-Csv ".\servers.csv")
 $date = ( get-date ).ToString(‘yyyy-MM-dd’)
 
 Function Get-ColorSplat
@@ -41,7 +41,7 @@ Get-ColorSplat
 
 # Analyse for every servers
 Write-host "In progress ..."
-foreach ($entry in $serverSQL)
+foreach ($entry in $servers)
 {	
 	$ComputerName = $entry.Name
 	if ($ComputerName -ne $null) {	

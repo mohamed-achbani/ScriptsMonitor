@@ -7,8 +7,11 @@
 	<!-- max last lines to read in alert logfile of the database -->	
 	<!-- TNS NAME of the database -->	
 	<db>
-		<dest>alert_DB1.log</dest>		
+		<dest>\\serverName\c$\Oracle\diag\rdbms\db1\db1\trace\alert_db1.log</dest>		
 		<max_lines_read>500</max_lines_read>	
+		<userid>SYS</userid>
+		<pwd>manager</pwd>
+		<version>11</version>
 		<TNS>DB1</TNS>		
 	</db>			
 	<!-- add the same DB section for the next database -->		

@@ -27,6 +27,11 @@ $fileName 	= $file;
 $Now 		= Get-Date
 $date 		= $Now.AddDays(-$days)	
 
+if ($file -eq "") {
+		$msg = "Usage : check_file_present -fileName [fileName] [-days days] [-sizeKo sizeKo]";
+		write-host $msg;
+		exit $status;
+} 
 
 if (Test-Path $fileName ) {
 	$present = $true;
@@ -49,7 +54,7 @@ if ($present) {
 	
 	$msgStatus	= "OK: "
 	$msg 		= "$fileName exist with size $sizeFileAsKo Ko ($sizeFileAsMb Mb) and date $dateFileAsString"	
-	$perfdata	= "'Time in seconds'=$TimeDiffSeconds"
+	$perfdata	= "'Time_in_seconds'=$TimeDiffSeconds 'Size_in_Ko'=$sizeFileAsKo"
 	$status 	= 0
 		
 	if ($sizeFileAsKo -le $sizeKo) {
@@ -77,5 +82,3 @@ if ($present) {
 Write-Host "$msgStatus $msg | $perfdata";
 exit $status;
 
-
-# TODO Return time (time created - timemodified)

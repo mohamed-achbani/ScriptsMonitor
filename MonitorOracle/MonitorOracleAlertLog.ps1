@@ -12,7 +12,7 @@
 
 Param ( 
 		[String] $scope = "DB",
-		[String] $pTNS 	= "DB1"		
+		[String] $pTNS 	= ""		
 )
 
 

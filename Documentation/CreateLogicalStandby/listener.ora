@@ -1,0 +1,43 @@
+DB1 =
+  (DESCRIPTION_LIST =  
+    (DESCRIPTION = 
+       (ADDRESS_LIST = 
+           (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+       )
+     )
+  )
+
+SID_LIST_DB1 =
+  (SID_LIST =
+    (SID_DESC =
+      (GLOBAL_DBNAME = DB1)
+      (SID_NAME = DB1)
+    ) 
+  )
+
+
+LOGGING_DB1 = OFF
+
+DIAG_ADR_ENABLED_DB1 = OFF
+
+
+DB2 =
+  (DESCRIPTION_LIST =  
+    (DESCRIPTION = 
+       (ADDRESS_LIST = 
+           (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1522))
+       )
+     )
+  )
+
+SID_LIST_DB2 =
+  (SID_LIST =
+    (SID_DESC =
+      (GLOBAL_DBNAME = DB2)
+      (SID_NAME = DB2)
+    ) 
+  )
+
+LOGGING_DB2 = OFF
+
+DIAG_ADR_ENABLED_DB2 = OFF

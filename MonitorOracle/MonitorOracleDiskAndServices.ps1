@@ -15,7 +15,7 @@
 cls
 
 # List servers name
-$servers = @(Get-Content ".\servers.txt")
+$servers = @(Import-Csv ".\servers.csv")
 
 # Analyse for every servers
 Write-host "In progress ..."
