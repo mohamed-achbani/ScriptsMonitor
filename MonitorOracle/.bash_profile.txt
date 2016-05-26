@@ -1,0 +1,52 @@
+####
+# Put this in your /home/oracle/.bash_profile 
+# Install first rlwrap (Installation From EPEL): 
+# 	wget http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+# 	rpm -Uvh epel-release-6-8.noarch.rpm
+#  	yum install rlwrap
+#############################################
+
+
+##################################
+# Variable Oracle
+base=`ps -ef | grep pmon | grep -v grep | awk '{print $NF}' | sed 's/ora_pmon_//'| grep -v "s///"`
+
+##################################
+# Alias Oracle
+alias tora='/home/oracle/scripts/PrintOracleAlertLog.sh ORA- 2 | tail -10'
+alias sql='rlwrap $ORACLE_HOME/bin/sqlplus / as sysdba'
+alias rman='rlwrap $ORACLE_HOME/bin/rman target /'
+alias bdup='echo $base'
+
+
+##################################
+# function Oracle
+function orahelp ()
+{
+
+cat << !
+#############################################################################
+   HOSTNAME : $HOSTNAME
+ ORACLE_SID : $ORACLE_SID
+ORACLE_HOME : $ORACLE_HOME
+#############################################################################
+
+alias
+        - sql                   : connexion en sysdba
+        - rman                  : connexion RMAN
+        - tora                  : tail sur lalertlog
+        - bdup                  : liste des bases disponible
+        - fonction sid <dbname> : positionner les variables dune instance
+        - fonction orahelp      : afficher lenvironnment
+
+!
+}
+
+function sid ()
+{
+
+export ORACLE_SID=$1 ;
+orahelp
+
+}
+
